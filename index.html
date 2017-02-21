@@ -164,6 +164,47 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-优衣库加入keep-alive后组件缓存问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="优衣库加入keep-alive后组件缓存问题"><a href="#优衣库加入keep-alive后组件缓存问题" class="headerlink" title="优衣库加入keep-alive后组件缓存问题"></a>优衣库加入keep-alive后组件缓存问题</h1><hr>
+<blockquote>
+<p>由于加了项目中加了<code>keep-alive</code>这个东西，导致出现各类奇葩问题，页面只第一次进入调借口，组件只选入第一次的数据，以后数据都被缓存下来了</p>
+</blockquote>
+<hr>
+<p>由于这个奇葩的bug和项目同事纠结了好久，什么加路由元信息，动态的<code>v-if</code>来用<code>keep-alive</code>但是总觉得还是有点麻烦，阅读了一下官方文档，上面有一个介绍关于生命周期的api；<br>当页面被缓存后，只触发<code>activated</code>和<code>deactivated</code>这两个生命周期，那我们可以从这个地方下手去解决页面上有的子组件数据更新的问题了，可以在父组件上加入生命周期<code>deactivated</code>然后调用<code>this.$destroy();</code>方法，此方法是完全销毁一个实例。此时也会触发子组件里的销毁方法，这样每当这个页面离开后再进入，数据都会是最新的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/22/优衣库加入keep-alive后组件缓存问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-“优衣库项目总结”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
