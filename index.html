@@ -59,9 +59,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/随笔/">随笔</a></li>
 	        
 				<li><a href="/tags">tags</a></li>
+	        
+				<li><a href="/categories/vue/">vue</a></li>
 	        
 			</ul>
 		</nav>
@@ -123,6 +125,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -143,11 +147,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/categories/随笔/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags">tags</a></li>
+					<li style="width: 25%"><a href="/tags">tags</a></li>
+		        
+					<li style="width: 25%"><a href="/categories/vue/">vue</a></li>
 		        
 				</ul>
 			</nav>
@@ -164,17 +170,35 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-优衣库加入keep-alive后组件缓存问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-移动端ios使用translate闪屏问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/24/移动端ios使用translate闪屏问题/">移动端ios使用translate闪屏问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/24/移动端ios使用translate闪屏问题/" class="archive-article-date">
+  	<time datetime="2017-02-24T15:15:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="优衣库加入keep-alive后组件缓存问题"><a href="#优衣库加入keep-alive后组件缓存问题" class="headerlink" title="优衣库加入keep-alive后组件缓存问题"></a>优衣库加入keep-alive后组件缓存问题</h1><hr>
-<blockquote>
-<p>由于加了项目中加了<code>keep-alive</code>这个东西，导致出现各类奇葩问题，页面只第一次进入调借口，组件只选入第一次的数据，以后数据都被缓存下来了</p>
+        <blockquote>
+<p>由于本人对页面一些酷炫的效果感兴趣，喜欢在项目中加入一下过渡动画效果，由此引发了一些诡异的问题…比如我用<code>vue</code>做登录页面时，使用了自己写的<code>input</code>组件，组件中placeholder是由input聚焦后用transltate来改变其位置的，效果在pc浏览器上自我感觉良好，但是当代码上传后，奇怪的时候接连发生，加了滑块验证后，一点击页面就变白，找了好多方法，都不见疗效，今天在某个瞬间找到了一片关于移动端的一些bug文章，才领悟到一些所以然来。那么我们废话不多说，上代码.</p>
 </blockquote>
-<hr>
-<p>由于这个奇葩的bug和项目同事纠结了好久，什么加路由元信息，动态的<code>v-if</code>来用<code>keep-alive</code>但是总觉得还是有点麻烦，阅读了一下官方文档，上面有一个介绍关于生命周期的api；<br>当页面被缓存后，只触发<code>activated</code>和<code>deactivated</code>这两个生命周期，那我们可以从这个地方下手去解决页面上有的子组件数据更新的问题了，可以在父组件上加入生命周期<code>deactivated</code>然后调用<code>this.$destroy();</code>方法，此方法是完全销毁一个实例。此时也会触发子组件里的销毁方法，这样每当这个页面离开后再进入，数据都会是最新的。</p>
+<p>参考文章：<br><a href="http://www.cnblogs.com/wangpenghui522/p/5398137.html" target="_blank" rel="external">移动端兼容性问题解决方案</a></p>
+<h3 id="文章中介绍了消除transition-闪屏的字眼吸引了我"><a href="#文章中介绍了消除transition-闪屏的字眼吸引了我" class="headerlink" title="文章中介绍了消除transition 闪屏的字眼吸引了我"></a>文章中介绍了消除transition 闪屏的字眼吸引了我</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-webkit-transform-style: preserve<span class="number">-3</span>d;     <span class="comment">/*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/</span></div><div class="line">-webkit-backface-visibility: hidden;      <span class="comment">/*(设置进行转换的元素的背面在面对用户时是否可见：隐藏)*/</span></div></pre></td></tr></table></figure>
+<p>下次如果阅读此篇文章的你也有这样的bug快将上处代码<code>ctrl+c</code>、<code>ctrl+v</code>到加了过渡元素的dom上吧</p>
+<h4 id="然后会介绍css动画页面闪白，动画卡顿"><a href="#然后会介绍css动画页面闪白，动画卡顿" class="headerlink" title="然后会介绍css动画页面闪白，动画卡顿"></a>然后会介绍css动画页面闪白，动画卡顿</h4><blockquote>
+<p>解决办法： 开启硬件加速吧皮卡丘…GPU！<br>具体代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">translate3d</span>(0, 0, 0);</div><div class="line"><span class="selector-tag">-moz-transform</span>: <span class="selector-tag">translate3d</span>(0, 0, 0);</div><div class="line"><span class="selector-tag">-ms-transform</span>: <span class="selector-tag">translate3d</span>(0, 0, 0);</div><div class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translate3d</span>(0, 0, 0);</div></pre></td></tr></table></figure></p>
+</blockquote>
 
       
 
@@ -183,11 +207,30 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/22/优衣库加入keep-alive后组件缓存问题/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/24/移动端ios使用translate闪屏问题/">展开全文 >></a>
         </p>
       
 
@@ -254,10 +297,103 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue/" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/02/15/“优衣库项目总结”/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-优衣库加入keep-alive后组件缓存问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/15/优衣库加入keep-alive后组件缓存问题/">优衣库加入keep-alive后组件缓存问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/15/优衣库加入keep-alive后组件缓存问题/" class="archive-article-date">
+  	<time datetime="2017-02-15T14:27:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="优衣库加入keep-alive后组件缓存问题"><a href="#优衣库加入keep-alive后组件缓存问题" class="headerlink" title="优衣库加入keep-alive后组件缓存问题"></a>优衣库加入keep-alive后组件缓存问题</h1><hr>
+<blockquote>
+<p>由于加了项目中加了<code>keep-alive</code>这个东西，导致出现各类奇葩问题，页面只第一次进入调借口，组件只选入第一次的数据，以后数据都被缓存下来了</p>
+</blockquote>
+<hr>
+<p>由于这个奇葩的bug和项目同事纠结了好久，什么加路由元信息，动态的<code>v-if</code>来用<code>keep-alive</code>但是总觉得还是有点麻烦，阅读了一下官方文档，上面有一个介绍关于生命周期的api；<br>当页面被缓存后，只触发<code>activated</code>和<code>deactivated</code>这两个生命周期，那我们可以从这个地方下手去解决页面上有的子组件数据更新的问题了，可以在父组件上加入生命周期<code>deactivated</code>然后调用<code>this.$destroy();</code>方法，此方法是完全销毁一个实例。此时也会触发子组件里的销毁方法，这样每当这个页面离开后再进入，数据都会是最新的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue/" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/15/优衣库加入keep-alive后组件缓存问题/">展开全文 >></a>
         </p>
       
 
@@ -318,6 +454,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/随笔/" class="article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -563,6 +710,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">生活</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">html5</a>
               </li>
             
             <div class="clearfix"></div>
