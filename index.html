@@ -170,6 +170,90 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue中使用axios拦截器问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/28/vue中使用axios拦截器问题/">vue中使用axios拦截器问题</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/28/vue中使用axios拦截器问题/" class="archive-article-date">
+  	<time datetime="2017-02-28T14:40:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vue中使用axios全局使用拦截器在ios9上面会出现…"><a href="#vue中使用axios全局使用拦截器在ios9上面会出现…" class="headerlink" title="vue中使用axios全局使用拦截器在ios9上面会出现…"></a>vue中使用axios全局使用拦截器在ios9上面会出现…</h3><blockquote>
+<p>axios自身的机制会在ios9上当一个接口不需要Authorization时，而在main.js中又加入了拦截器配置了token，这就使得axios自己会去判断，安全性问题，阻止了接口的调用，并返回一个如下的信息</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">code</span>: <span class="number">12</span>,</div><div class="line">	<span class="attr">name</span>: <span class="string">'SyntaxError'</span>,</div><div class="line">	<span class="attr">message</span>: <span class="string">'SyntaxError: DOM Exception 12'</span>,</div><div class="line">	<span class="attr">line</span>: <span class="number">125</span>,</div><div class="line">	<span class="attr">column</span>: <span class="number">35</span>	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个头疼的问题一直以为是代码中哪个地方写错了，在ios9上就是不能调用接口，后来把main.js中的拦截器Authorization注释后就可以调用了，但是！但是，我们在登录后调用的接口都是需要拿到token的，我们不会每次调用接口的时候去赋值一遍token那样就太麻烦了，所以解决办法：</p>
+<blockquote>
+<p>在登录接口不需要Authorization的时候，直接将拦截器defaults. Authorization设置为空就可以了</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/vue/" class="article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/28/vue中使用axios拦截器问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-移动端ios使用translate闪屏问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

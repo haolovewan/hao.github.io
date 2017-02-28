@@ -6,17 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/2 | 黄浩的博客</title>
+  <title>vue中使用axios拦截器问题 | 黄浩的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="普通本科院校12级，就职于汉得信息移动部门，普通的前端工程师一枚，此为博客一枚。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="黄浩的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/02/index.html">
+  <meta name="description" content="vue中使用axios全局使用拦截器在ios9上面会出现…
+axios自身的机制会在ios9上当一个接口不需要Authorization时，而在main.js中又加入了拦截器配置了token，这就使得axios自己会去判断，安全性问题，阻止了接口的调用，并返回一个如下的信息
+
+1234567&amp;#123;	code: 12,	name: &apos;SyntaxError&apos;,	message: &apos;Syntax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue中使用axios拦截器问题">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/vue中使用axios拦截器问题/index.html">
 <meta property="og:site_name" content="黄浩的博客">
-<meta property="og:description" content="普通本科院校12级，就职于汉得信息移动部门，普通的前端工程师一枚，此为博客一枚。">
+<meta property="og:description" content="vue中使用axios全局使用拦截器在ios9上面会出现…
+axios自身的机制会在ios9上当一个接口不需要Authorization时，而在main.js中又加入了拦截器配置了token，这就使得axios自己会去判断，安全性问题，阻止了接口的调用，并返回一个如下的信息
+
+1234567&amp;#123;	code: 12,	name: &apos;SyntaxError&apos;,	message: &apos;Syntax">
+<meta property="og:updated_time" content="2017-02-28T14:53:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黄浩的博客">
-<meta name="twitter:description" content="普通本科院校12级，就职于汉得信息移动部门，普通的前端工程师一枚，此为博客一枚。">
+<meta name="twitter:title" content="vue中使用axios拦截器问题">
+<meta name="twitter:description" content="vue中使用axios全局使用拦截器在ios9上面会出现…
+axios自身的机制会在ios9上当一个接口不需要Authorization时，而在main.js中又加入了拦截器配置了token，这就使得axios自己会去判断，安全性问题，阻止了接口的调用，并返回一个如下的信息
+
+1234567&amp;#123;	code: 12,	name: &apos;SyntaxError&apos;,	message: &apos;Syntax">
   
     <link rel="alternative" href="/atom.xml" title="黄浩的博客" type="application/atom+xml">
   
@@ -168,36 +178,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue中使用axios拦截器问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      vue中使用axios拦截器问题
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/28/vue中使用axios拦截器问题/" class="archive-article-date">
+
+        
+        <a href="/2017/02/28/vue中使用axios拦截器问题/" class="archive-article-date">
   	<time datetime="2017-02-28T14:40:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/28/vue中使用axios拦截器问题/">vue中使用axios拦截器问题</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vue中使用axios全局使用拦截器在ios9上面会出现…"><a href="#vue中使用axios全局使用拦截器在ios9上面会出现…" class="headerlink" title="vue中使用axios全局使用拦截器在ios9上面会出现…"></a>vue中使用axios全局使用拦截器在ios9上面会出现…</h3><blockquote>
+<p>axios自身的机制会在ios9上当一个接口不需要Authorization时，而在main.js中又加入了拦截器配置了token，这就使得axios自己会去判断，安全性问题，阻止了接口的调用，并返回一个如下的信息</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">code</span>: <span class="number">12</span>,</div><div class="line">	<span class="attr">name</span>: <span class="string">'SyntaxError'</span>,</div><div class="line">	<span class="attr">message</span>: <span class="string">'SyntaxError: DOM Exception 12'</span>,</div><div class="line">	<span class="attr">line</span>: <span class="number">125</span>,</div><div class="line">	<span class="attr">column</span>: <span class="number">35</span>	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个头疼的问题一直以为是代码中哪个地方写错了，在ios9上就是不能调用接口，后来把main.js中的拦截器Authorization注释后就可以调用了，但是！但是，我们在登录后调用的接口都是需要拿到token的，我们不会每次调用接口的时候去赋值一遍token那样就太麻烦了，所以解决办法：</p>
+<blockquote>
+<p>在登录接口不需要Authorization的时候，直接将拦截器defaults. Authorization设置为空就可以了</p>
+</blockquote>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -213,7 +250,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -226,283 +263,86 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/28/vue中使用axios拦截器问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/24/移动端ios使用translate闪屏问题/" class="archive-article-date">
-  	<time datetime="2017-02-24T15:15:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/24/移动端ios使用translate闪屏问题/">移动端ios使用translate闪屏问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/15/“优衣库项目总结”/" class="archive-article-date">
-  	<time datetime="2017-02-15T14:27:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/15/“优衣库项目总结”/">“优衣库项目总结”</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue/" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/15/优衣库加入keep-alive后组件缓存问题/" class="archive-article-date">
-  	<time datetime="2017-02-15T14:27:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/15/优衣库加入keep-alive后组件缓存问题/">优衣库加入keep-alive后组件缓存问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/vue/" class="article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/12/元宵之夜/" class="archive-article-date">
-  	<time datetime="2017-02-11T18:09:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/12/元宵之夜/">元宵之夜</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔/" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/11/博客诞生啦/" class="archive-article-date">
-  	<time datetime="2017-02-11T12:11:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/11/博客诞生啦/">博客诞生啦</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/11/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-11T08:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/02/24/移动端ios使用translate闪屏问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端ios使用translate闪屏问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -525,8 +365,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
